@@ -33,6 +33,7 @@ module.exports = function(RED) {
                 ymin: config.ymin,
                 ymax: config.ymax,
                 dot: config.dot || false,
+                dotsize: config.dotsize,
                 xformat : config.xformat || "HH:mm:SS",
                 cutout: parseInt(config.cutout || 0),
                 colors: config.colors

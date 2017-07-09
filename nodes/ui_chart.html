@@ -31,6 +31,7 @@
             interpolate: {value: 'linear', required:true},
             nodata: {value: ''},
             dot: {value: false},
+            dotsize : {value: '3'},
             ymin: {value: '', validate:function(value) { return value === '' || RED.validators.number(); }},
             ymax: {value: '', validate:function(value) { return value === '' || RED.validators.number(); }},
             removeOlder: {value: 1, validate:RED.validators.number(), required:true},
@@ -69,11 +70,13 @@
                     $("#y-axis-show").show();
                     $("#hole-size-show").hide();
                     $("#show-dot-field").show();
+                    $("#show-dotsize-field").show();
                 } else {
                     $("#x-axis-show").hide();
                     $("#x-axis-label-show").hide();
                     $("#interpolate-show").hide();
                     $("#show-dot-field").hide();
+                    $("#show-dotsize-field").hide();
                     if ($(this).val() === "pie") {
                         $("#y-axis-show").hide();
                         $("#legend-show").show();
@@ -167,9 +170,13 @@
             <option value="horizontalBar"> &#xf080; Bar chart (H)</option>
             <option value="pie"> &#xf200; Pie chart</option>
         </select>
-        <div id="show-dot-field" style="display:inline-block;">
-            <input type="checkbox" id="node-input-dot" style="display:inline-block; width:auto; vertical-align:baseline; margin-left:40px; margin-right:5px;">enlarge points
-        </div>
+    </div>
+    <div class="form-row" id="show-dot-field">
+        <label for="node-input-dot">Points</label>
+        <input type="checkbox" id="node-input-dot" style="width:auto;">
+        <label for="node-input-dot" style="width:auto; margin-left: 5px; margin-right: 10px; vertical-align:baseline;">visible</label>
+        <label for="node-input-dotsize" style="width:auto; margin-left: 50px;">dot size</label>
+        <input type="text" id="node-input-dotsize" style="width: 50px;">
     </div>
     <div class="form-row" id="x-axis-show">
         <label for="node-input-removeOlder">X-axis</label>

@@ -104,6 +104,7 @@ function loadConfiguration(type,scope) {
     var interpolate = scope.$eval('me.item.interpolate');
     var xFormat = scope.$eval('me.item.xformat');
     var showDot = scope.$eval('me.item.dot');
+    var dotSize = scope.$eval('me.item.dotsize');
     var baseColours = scope.$eval('me.item.colors') || ['#1F77B4', '#AEC7E8', '#FF7F0E', '#2CA02C', '#98DF8A', '#D62728', '#FF9896', '#9467BD', '#C5B0D5'];
     var config = {};
     var themeState = scope.$eval('me.item.theme.themeState');
@@ -182,7 +183,7 @@ function loadConfiguration(type,scope) {
                 fill: false
             },
             point: {
-                radius: showDot ? 2 : 0,
+                radius: showDot ? dotSize : 0,
                 hitRadius: 4,
                 hoverRadius: 4 }
         }
