@@ -184,7 +184,7 @@ function loadConfiguration(type,scope) {
             },
             point: {
                 radius: showDot ? dotSize : 0,
-                hitRadius: showDot ? (dotSize + 2) : 4,
+                hitRadius: 4,
                 hoverRadius: showDot ? (dotSize + 2): 4 }
         }
         switch (interpolate) {
